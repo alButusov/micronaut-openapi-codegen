@@ -72,6 +72,12 @@ public class IssueCodegenTest extends AbstractCodegenTest {
 		generate(configurator("src/test/resources/openapi/issue-372.yaml", "issue._372"));
 	}
 
+	@DisplayName("model with inner and external enum values")
+	@Test
+	void modelWithInnerAndExternalEnumValues() {
+		generate(configurator("src/test/resources/openapi/issue-serde.yaml", "issue.serde"));
+	}
+
 	static void generate(CodegenConfigurator configurator) {
 		var gen = new DefaultGenerator();
 		gen.setGenerateMetadata(false);
